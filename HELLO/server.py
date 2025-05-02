@@ -10,3 +10,15 @@ async def root():
 @app.get('/profile')
 def profile():
     return {'nome': 'Victória Amaral'}
+
+@app.post('/profile')
+def signup():
+    return {'Mensagem': 'Perfil Criado Com Sucesso!'}
+
+@app.put('/profile')
+def atualizar()):
+    return {'Mensagem': 'Perfil Atualizado Com Sucesso!'}
+
+@app.delete('/profile')
+def delete():
+    return {'Mensagem': 'Perfil Deletado Com Sucesso!'}
