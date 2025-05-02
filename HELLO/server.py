@@ -16,7 +16,7 @@ def signup():
     return {'Mensagem': 'Perfil Criado Com Sucesso!'}
 
 @app.put('/profile')
-def atualizar()):
+def atualizar():
     return {'Mensagem': 'Perfil Atualizado Com Sucesso!'}
 
 @app.delete('/profile')
