@@ -1,6 +1,8 @@
 # Importa a classe FastAPI do módulo fastapi
 from fastapi import FastAPI
 
+from pydantic import BaseModel
+
 # Cria uma instância da aplicação FastAPI
 app = FastAPI()
 
@@ -36,3 +38,11 @@ def area_retangulo(largura: int, altura: int = 1):
     area = largura * altura
     texto = f'A área é {area}.'  # Pode ser melhorada a mensagem!
     return {"mensagem": texto}
+
+class Produto(BaseModel):
+    nome: str
+    valor: float
+
+@app.get("/produtos")
+def produtos(produto:Produto):
+    return {"mensagem": f'Produtos ({produto.nome}) - R${produto.preco} cadastrado com sucesso.'}
